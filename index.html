@@ -1,16 +1,16 @@
 ---
-layout: home
+layout: page
+title: Blog
+subtitle: Hitchhiker's guid to web development
 ---
 
-<div class="home">
-  <ul class="post-list">
+<ul class="list-posts">
     {% for post in site.posts %}
-      <li>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
-            {{ post.title }}
-            <div class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</div>
-          </a>
-      </li>
+        <li class="post-teaser">
+            <a href="{{ post.url | prepend: site.baseurl }}">
+                <span class="post-teaser__title">{{ post.title }}</span>
+                <span class="post-teaser__date">{{ post.date | date: "%d %B %Y" }}</span>
+            </a>
+        </li>
     {% endfor %}
-  </ul>
-</div>
+</ul>
